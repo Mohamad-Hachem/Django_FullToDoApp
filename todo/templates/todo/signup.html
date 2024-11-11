@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Signup</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'todo/index.css' %}">
+
+</head>
+<body class="all">
+    <div class="signup-login">
+        <div class="signup-box">
+            <form method="post">
+                {% csrf_token %}
+                <div class="heading">
+                    Signup
+                </div>
+                <div class="line"></div>
+                <div class="field">
+                    <b>Username</b>
+                    <input type="text" class="inp" required placeholder="Enter your Username" name="fnm">
+                </div>
+                <div class="field">
+                    <b>Email</b>
+                    <input type="email" required class="inp" name="email">
+                </div>
+                <div class="field">
+                    <b>Password</b>
+                    <input type="password" class="inp" required name="pwd">
+                </div>
+                <div type="field">
+                    <input type="submit" class="submit-button" value="Signup">
+                </div>
+            </form>
+            <div class="field">
+                <b style="margin-left: 130px">Already have an account?</b>
+                <br>
+                <a class="anc" href="{% url 'todo:login' %}"></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
